@@ -36,6 +36,7 @@ public class FindElementsHw {
         System.out.println(elements.size());
     }
 
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
