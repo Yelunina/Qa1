@@ -35,6 +35,7 @@ public class FindElementsHw {
         List<WebElement> elements = driver.findElements(By.tagName("li"));
         System.out.println(elements.size());
     }
+
     @Test
     public void findElementByCssSelector() {
         driver.findElement(By.cssSelector("ul"));
@@ -54,6 +55,25 @@ public class FindElementsHw {
         driver.findElement(By.cssSelector("[href^='/apparel']"));
         driver.findElement(By.cssSelector("[href^='/privacy']"));
         driver.findElement(By.cssSelector("[href$='shoes']"));
+    }
+
+    @Test
+    public void findElementByXpath() {
+        driver.findElement(By.xpath("//ul"));
+
+        driver.findElement(By.xpath("//*[@id='bar-notification']"));
+        driver.findElement(By.xpath("//*[@id='dialog-notifications-error']"));
+        driver.findElement(By.xpath("//*[@id='dialog-notifications-success']"));
+
+        driver.findElement(By.xpath("//*[@class='ajax-loading-block-window']"));
+        driver.findElement(By.xpath("//*[@class='loading-image']"));
+        driver.findElement(By.xpath("//*[@class='master-wrapper-main']"));
+
+        driver.findElement(By.xpath("//*[contains(.,'shoes')]"));
+
+        driver.findElement(By.xpath("//*[starts-with(@href,'/apparel')]"));
+        driver.findElement(By.xpath("//*[starts-with(@href,'/privacy')]"));
+
     }
 
 
