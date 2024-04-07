@@ -38,7 +38,6 @@ public class TestBase {
     public void click(By locator) {
         driver.findElement(locator).click();
     }
-
     public boolean isAlertPresent() {
         Alert alert = new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.alertIsPresent());
@@ -49,4 +48,5 @@ public class TestBase {
             return true;
         }
     }
+
 }
