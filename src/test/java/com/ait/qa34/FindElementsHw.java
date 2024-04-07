@@ -1,26 +1,12 @@
 package com.ait.qa34;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.List;
 
-public class FindElementsHw {
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.get("https://demowebshop.tricentis.com/");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
+public class FindElementsHw extends TestBase{
 
     @Test
     public void findElementByTagName() {
@@ -75,14 +61,10 @@ public class FindElementsHw {
         driver.findElement(By.xpath("//*[starts-with(@href,'/privacy')]"));
 
 
-        //driver.findElement(By.xpath("//*[.='You’ll never miss a moment because of switching tapes or discs with this exclusive Tricentis camcorder. Its built-in 60GB hard disk drive offers plenty of storage as you zero in on your subjects with the professional-quality lens and a powerful 25x optical/2000x digital zoom. Compose shots using the 2.7-inch wide (16:9) touch-panel LCD display, and maintain total control and clarity with the super steady shot image stabilization system. Hybrid recording technology even gives you the choice to record video to either the internal hard disk drive or removable memory stick.']"));
+        driver.findElement(By.xpath("//p[contains(text(),'Welcome to the new Tricentis store!')]"));
         driver.findElement(By.xpath("//*[contains(text(),'Camera, photo')]"));
         driver.findElement(By.xpath("//*[contains(.,'Camera, photo')]"));
     }
 
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }
