@@ -29,6 +29,7 @@ public class CreateAccountTest extends TestBase {
         //driver.findElement(By.id("Email")).click();
         //driver.findElement(By.id("Email")).clear();
         //driver.findElement(By.id("Email")).sendKeys("yelunina@ukr.net");
+        //type(By.name("email"), "manuel" + i + "@gm.com")
         type(By.id("Email"),"yelunina@ukr.net");
 
 
