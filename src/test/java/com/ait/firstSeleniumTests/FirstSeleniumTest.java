@@ -1,4 +1,4 @@
-package com.ait.qa34;
+package com.ait.firstSeleniumTests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,27 +10,22 @@ public class FirstSeleniumTest {
 
     WebDriver driver;
 
-    //before - setUp
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
-        // driver.get("https://www.google.com");// without history
-        driver.navigate().to("https://www.google.com");// with history
+        driver.navigate().to("https://www.google.com");
         driver.navigate().back();
         driver.navigate().forward();
         driver.navigate().refresh();
     }
 
-    //test - name
     @Test
     public void openGoogleTest() {
         System.out.println("Google is opened!");
     }
 
-    //after - tearDown
-    @AfterMethod(enabled = false)// disable method
+    @AfterMethod(enabled = false)
     public void tearDown() {
-        driver.quit();//close browser(all tabs)
-        //  driver.close();//only one tab(if only one -> close browser)
+        driver.quit();
     }
 }

@@ -1,23 +1,22 @@
 package com.ait.qa34;
 
+import com.ait.qa34.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class FindElementsHw extends TestBase{
+public class FindElementsHw extends TestBase {
 
     @Test
     public void findElementByTagName() {
-        //find element by tag name
         WebElement element = driver.findElement(By.tagName("ul"));
         System.out.println(element.getText());
 
         WebElement element1 = driver.findElement(By.tagName("img"));
         System.out.println(element1.getText());
 
-        //find list of elements by tag name
         List<WebElement> elements = driver.findElements(By.tagName("li"));
         System.out.println(elements.size());
     }
